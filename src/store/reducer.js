@@ -8,7 +8,6 @@ const reducer = (state = initialState, action) => {
     case ADD_MOVIE:
       const newMovie = action.payload.newMovie;
       newMovie.watched = false;
-      newMovie.image = "";
       newMovie.id = state.movies[state.movies.length - 1] + 1;
       return {
         ...state,

@@ -5,8 +5,15 @@ const MovieItem = (props) => {
   const { id, name, watched } = props.movie;
   return (
     <tr>
-      <td>{name}</td>
-      <td>
+      <td
+        onClick={() => {
+          props.setShowModal(props.movie);
+        }}
+        class="px-4 py-3"
+      >
+        {name}
+      </td>
+      <td class="px-4 py-3">
         <button
           onClick={() => {
             dispatch(updateMovie(id));
@@ -15,7 +22,7 @@ const MovieItem = (props) => {
           {watched ? "Unwatch" : "Watched"}
         </button>
       </td>
-      <td>
+      <td class="px-4 py-3">
         <button
           onClick={() => {
             dispatch(deleteMovie(id));
